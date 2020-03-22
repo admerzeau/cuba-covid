@@ -107,9 +107,20 @@
         </div>
       </section>
 
+      <section id="about" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <h2>Quienes somos</h2>
+              <p class="lead">El Grupito es solo eso, un grupito de devs cubanos aportando hoy este grano de arena para ayudar a difundir información que impacte de manera positiva en la prevención y control del COVID-19 en nuestra amada Cuba.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer class="py-5 bg-dark">
         <div class="container">
-          <p class="m-0 text-center text-white">Copyright &copy; 2020</p>
+          <p class="m-0 text-center text-white">Copyright &copy; 2020 El Grupito</p>
         </div>
         <!-- /.container -->
       </footer>
