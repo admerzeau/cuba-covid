@@ -17,6 +17,9 @@
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#recomendations">Recomendaciones</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about">Acerca de</a>
+              </li>
             </ul>
           </div>
         </div>
