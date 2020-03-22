@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <h1>{{ msg }}</h1>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container">
           <a class="navbar-brand js-scroll-trigger" href="#page-top">Inicio</a>
@@ -25,38 +24,46 @@
 
       <header class="bg-primary text-white">
         <div class="container text-center">
-          <h1>Coronavirus COVID-19</h1>
-          <p class="lead">Reportes estadísticos del virus en Cuba</p>
+          <h1>{{title}}</h1>
+          <p class="lead">{{subtitle}}</p>
         </div>
       </header>
 
       <section id="cases">
         <div class="container">
           <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <h2>Casos reportados</h2>
+            <div class="col-lg-12 mx-auto">
+              <h2>Desglose de Casos</h2>
               <div class="row">
-                <div class="col-12 col-sm-4 mt-2">
-                    <div class="card bg-danger">
+                <div class="col-12 col-sm-3 mt-2">
+                    <div class="card bg-warning">
                         <div class="card-body text-white">
-                            <h3 class="card-title"><i class="fas fa-check"></i> 35</h3>
-                            <p class="card-text">Confirmados</p>
+                            <h3 class="card-title"><i class="fas fa-check"></i> {{totalcases}}</h3>
+                            <p class="card-text">Total de casos</p>
                           </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 mt-2">
-                    <div class="card bg-warning">
+                <div class="col-12 col-sm-3 mt-2">
+                    <div class="card bg-danger">
                         <div class="card-body">
-                            <h3 class="card-title"><i class="fas fa-hospital"></i> 489</h3>
+                            <h3 class="card-title"><i class="fas fa-frown"></i> {{totaldeaths}}</h3>
+                            <p class="card-text">Muertes</p>
+                          </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3 mt-2">
+                    <div class="card bg-info">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-user-md"></i> {{totalsuspicious}}</h3>
                             <p class="card-text">Sospechosos</p>
                           </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 mt-2">
-                    <div class="card bg-info">
+                <div class="col-12 col-sm-3 mt-2">
+                    <div class="card bg-success">
                         <div class="card-body">
-                            <h3 class="card-title"><i class="fas fa-user-md"></i> 30773</h3>
-                            <p class="card-text">Vigilados</p>
+                            <h3 class="card-title"><i class="fas fa-child"></i> {{totalrecovered}}</h3>
+                            <p class="card-text">Recuperados</p>
                           </div>
                     </div>
                 </div>
@@ -118,10 +125,33 @@
 </template>
 
 <script>
+
+var data = require("../../data.json");
+
 export default {
   name: 'Main',
+  beforeMount: function(){
+    
+    this.totalcases = data.totalcases;
+    this.totaldeaths = data.totaldeaths;
+    this.totalsuspicious = data.totalsuspicious;
+    this.totalrecovered = data.totalrecovered;
+
+  },
+  computed: {
+
+    deathRate: function() {
+      return this.totalcases / this.totaldeaths;
+    }
+
+  },
   props: {
-    msg: String
+    title: String,
+    subtitle: String,
+    totalcases: Number,
+    totaldeaths: Number, 
+    totalsuspicious: Number,
+    totalrecovered: Number,
   }
 }
 </script>
