@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "17cdc7ae-5a27-441d-aff7-deb1156f3f63",
+		"name": "covid-estimates-cu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d5b65111-faea-4aad-a899-34243f9625c9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"To have correlational id header\", function () {",
+							"    pm.response.to.have.header(\"X-Correlational-Id\");",
+							"});",
+							"pm.test(\"message is healthy\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.be.equal('The API is healthy');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1.0.0/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1.0.0",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "historic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d5b65111-faea-4aad-a899-34243f9625c9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"To have correlational id header\", function () {",
+							"    pm.response.to.have.header(\"X-Correlational-Id\");",
+							"});",
+							"pm.test(\"message has apropiated structure\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.latest).not.to.be.undefined;",
+							"    pm.expect(jsonData.history).not.to.be.undefined;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1.0.0/historic",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1.0.0",
+						"historic"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
