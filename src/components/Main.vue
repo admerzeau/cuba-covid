@@ -149,28 +149,83 @@ import getData from '../services/service'
  
 stockInit(Highcharts)
 
+
+const createEvaluationFunc = (a,b) => (x) => Math.ceil(a * Math.pow(Math.E, b * x))
+
+const buildChart = (xData, yEstimatedData, yRealData) => ({
+            chartOptions: {
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Casos confirmados'
+            },
+            xAxis: {
+                categories: xData
+            },
+            yAxis: {
+                title: {
+                    text: 'Casos'
+                }
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                }
+            },
+            series: [{
+                name: 'Estimado',
+                data: yEstimatedData
+
+            }, {
+                name: 'Real',
+                data: yRealData
+            }]
+        }
+        })
+
 export default {
   name: 'Main',
   data() {
-        return {
-            chartOptions: {
-                series: [{
-                    data: [1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3]
-                }]
-            }
-        }
+        return buildChart([],[],[])
     },
   components: {
     highcharts: Chart 
   },
-  beforeMount: async function (){
+  beforeMount: function (){
     
     this.totalcases = data.totalcases;
     this.totaldeaths = data.totaldeaths;
     this.totalsuspicious = data.totalsuspicious;
     this.totalrecovered = data.totalrecovered;
-    this.historic = await getData()
+  },
+  created() {
+            this.getInitialData()
+  },
+  methods: {
+    async getInitialData() {
+      const historic = await getData()
 
+      const func = createEvaluationFunc(historic.latest.data.a,historic.latest.data.b)
+
+      const yRealData = historic.history.map(e => e.total)
+      const yEstimatedData = []
+      const xData = []
+
+      let start_date = new Date(2020, 3, 10);
+
+      for(var i = 1; i <= 15; i++) {
+        yEstimatedData.push(func(i));
+
+        start_date.setDate(start_date.getDate() + 1);
+        xData.push(start_date.getDate() + '/' + start_date.getMonth())
+      }
+
+      this.chartOptions = buildChart(xData,yEstimatedData,yRealData)
+    }
   },
   computed: {
 
@@ -186,7 +241,6 @@ export default {
     totaldeaths: Number, 
     totalsuspicious: Number,
     totalrecovered: Number,
-    historic: []
   }
 }
 </script>
