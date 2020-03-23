@@ -81,7 +81,6 @@
           <div class="row">
             <div class="col-lg-10 mx-auto">
               <h2>Estadística</h2>
-              <p class="lead">Generar gráfica con los datos del backend.</p>
               <highcharts :constructor-type="'stockChart'" :options="chartOptions"></highcharts>
             </div>
           </div>
@@ -217,7 +216,7 @@ export default {
 
       let start_date = new Date(2020, 3, 10);
 
-      for(var i = 1; i <= 15; i++) {
+      for(var i = 1; i <= historic.history.length + 5; i++) {
         yEstimatedData.push(func(i));
 
         start_date.setDate(start_date.getDate() + 1);
