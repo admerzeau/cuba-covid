@@ -262,6 +262,42 @@ const buildChartOptions = (xData, yEstimatedData, yRealData) => ({
             }]      
 });
 
+
+const createEvaluationFunc = (a,b) => (x) => Math.ceil(a * Math.pow(Math.E, b * x))
+
+const buildChart = (xData, yEstimatedData, yRealData) => ({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Casos confirmados'
+            },
+            xAxis: {
+                categories: xData
+            },
+            yAxis: {
+                title: {
+                    text: 'Casos'
+                }
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                }
+            },
+            series: [{
+                name: 'Estimado',
+                data: yEstimatedData
+
+            }, {
+                name: 'Real',
+                data: yRealData
+            }]
+        })
+
 export default {
   name: 'Main',
   
@@ -308,10 +344,7 @@ export default {
         start_date.setDate(start_date.getDate() + 1);
         xData.push(start_date.getDate() + '/' + start_date.getMonth())
       }
-
-      console.log(buildMapChartOptions(data.casePerProvince));
       this.casePerProvinceOptions = buildMapChartOptions(data.casePerProvince);
-      console.log(buildChartOptions(xData, yEstimatedData, yRealData));
       this.casesPerDayChartOptions = buildChartOptions(xData, yEstimatedData, yRealData);
     }
   },
