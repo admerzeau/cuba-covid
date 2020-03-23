@@ -13,17 +13,15 @@ const MAX_ATTEMPTS = 3
  */
 const getData = () =>
   new Promise(
+    //TODO put in a local cache no need to do another request to the server, most probably the data wont change
     async (resolve, reject) => {
       let current = 0
       while (current < MAX_ATTEMPTS) {
-        console.log(`Post attempt number ${current + 1}`)
         try {
           const { data } = await axios.get(backURL)
-          console.log(`Attempt number ${current + 1} was successfull`)
           resolve(data)
           break
         } catch (err) {
-          console.log(`Attempt number ${current + 1} failed.`)
           current += 1
           if (current == MAX_ATTEMPTS) reject(err)
         }

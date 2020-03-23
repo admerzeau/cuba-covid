@@ -25,7 +25,11 @@
         </div>
       </nav>
       <section id="page-top">
-      
+        <div class="container">
+          <h3> Cuba vs Covid19 </h3>
+          <br>
+          <p>Las siguientes graficas muestran la informaci'on actualizada del {{ lastReviewDate }}. La estimacion de casos se basa en un simple metodo estadistico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la informacion si le parece util.</p>
+        </div>
       </section>
       <section id="cases">
         <div class="container">
@@ -78,7 +82,17 @@
             <div class="col-lg-12 mx-auto">
               <div class="card">
               <div class="card-body">
-                 <highcharts :constructor-type="'stockChart'" :options="casesPerDayChartOptions"></highcharts>
+                 <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
+              </div>
+            </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <div class="card">
+              <div class="card-body">
+                 <highcharts :options="casesPerDayEstimationsChartOptions" class="chart"></highcharts>
               </div>
             </div>
             </div>
@@ -178,6 +192,7 @@ import {Chart} from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import stockInit from 'highcharts/modules/stock'
 import mapInit from 'highcharts/modules/map'
+import darkUnica from 'highcharts/themes/dark-unica'
 import getData from '../services/service'
 import cubaMap from '../maps/cuba'
 
@@ -185,49 +200,7 @@ import cubaMap from '../maps/cuba'
 stockInit(Highcharts)
 mapInit(Highcharts)
 cubaMap(Highcharts)
-
-const createEvaluationFunc = (a,b) => (x) => Math.ceil(a * Math.pow(Math.E, b * x))
-
-const buildMapChartOptions = (casesPerProvince) => ({
-
-                chart: {
-                    map: 'cuba'
-                },
-
-                title: {
-                    text: 'Casos por provincia'
-                },
-
-                subtitle: {
-                    text: 'Fuente Minsap'
-                },
-
-
-                mapNavigation: {
-                    enabled: true,
-                    buttonOptions: {
-                        verticalAlign: 'bottom'
-                    }
-                },
-
-                colorAxis: {
-                    min: 0
-                },
-
-                series: [{
-                    data: casesPerProvince,
-                    name: 'Datos de Cuba',
-                    states: {
-                        hover: {
-                            color: '#BADA55'
-                        }
-                    },
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.name}'
-                    }
-                }]
-});
+darkUnica(Highcharts);
 
 Highcharts.setOptions({
     lang: {
@@ -251,6 +224,57 @@ Highcharts.setOptions({
             decimalPoint: '.'
         }
 });
+const createEvaluationFunc = (a,b) => (x) => Math.ceil(a * Math.pow(Math.E, b * x))
+const buildMapChartOptions = (casesPerProvince) => ({
+
+                chart: {
+                    map: 'cuba'
+                },
+                title: {
+                    text: 'Casos por provincia'
+                },
+                subtitle: {
+                    text: 'Fuente Minsap'
+                },
+                mapNavigation: {
+                    enabled: true,
+                    buttonOptions: {
+                        verticalAlign: 'bottom'
+                    }
+                },
+               colorAxis: {
+                min: 0,
+                stops: [
+                    [0, Highcharts.color('#8B0000').brighten(1).get()],
+                    [0.2, Highcharts.color('#8B0000').brighten(0.8).get()],
+                    [0.4, Highcharts.color('#8B0000').brighten(0.5).get()],
+                    [0.6, Highcharts.color('#8B0000').brighten(0.2).get()],
+                    [0.8, Highcharts.color('#8B0000').brighten(0).get()],
+                    [1, Highcharts.color('#8B0000').brighten(-0.3).get()]
+                ]
+            },
+                plotOptions: {
+                  map: {
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF'
+                        }
+                  }
+                },
+                series: [{
+                    data: casesPerProvince,
+                    name: 'Datos de Cuba',
+                    states: {
+                        hover: {
+                            color: '#BADA55'
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.value}'
+                    }
+                }]
+});
 
 const buildChartOptions = (xData, yEstimatedData, yRealData) => ({
            
@@ -260,29 +284,105 @@ const buildChartOptions = (xData, yEstimatedData, yRealData) => ({
             title: {
                 text: 'Casos confirmados'
             },
+            subtitle: {
+              text: 'Información obtenida del MINSAP'
+            },
             xAxis: {
-                categories: xData
+                categories: xData,
+                title: {
+                  text: 'Fecha'
+                },
+                labels: {
+                  style: {
+                      fontSize: '1.2em',
+                  }}
             },
             yAxis: {
                 title: {
-                    text: 'Casos'
-                }
+                    text: '# de Casos'
+                },
+                labels: {
+                  style: {
+                      fontSize: '1.2em',
+                  }}
             },
             tooltip: {
                 crosshairs: true,
                 shared: true
             },
             plotOptions: {
-                spline: {
-                }
+                spline:  {
+                  dataLabels: {
+                      enabled: true,
+                      style: {
+                      fontSize: '2em',
+                      },
+                  },
+                  enableMouseTracking: true
+              },
+            },
+            series: [
+              {
+                name: 'Casos confirmados',
+                data: yRealData,
+                color: '#FFFF00',
+            }]      
+});
+
+const buildChartEstimationsOptions = (xData, yEstimatedData, yRealData) => ({
+           
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Casos confirmados & Casos estimados'
+            },
+            subtitle: {
+              text: 'Los datos estimados son una predicción estadística basados en los casos confirmados'
+            },
+            xAxis: {
+                categories: xData,
+                title: {
+                  text: 'Fecha'
+                },
+                labels: {
+                  style: {
+                      fontSize: '1.2em',
+                  }}
+            },
+            yAxis: {
+                title: {
+                    text: '# Casos'
+                },
+                labels: {
+                  style: {
+                      fontSize: '1.2em',
+                  }}
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline:  {
+                  dataLabels: {
+                      enabled: true,
+                      style: {
+                      fontSize: '2em',
+                      },
+                  },
+                  enableMouseTracking: true
+              },
             },
             series: [{
-                name: 'Estimado',
-                data: yEstimatedData
+                name: 'Estimados',
+                data: yEstimatedData,
+                color: '#8B0000'
 
             }, {
-                name: 'Real',
-                data: yRealData
+                name: 'Confirmados',
+                data: yRealData,
+                color: '#FFFF00',
             }]      
 });
 
@@ -295,9 +395,11 @@ export default {
               totalDeaths: 0, 
               totalSuspicious: 0,
               totalRecovered: 0,
-
+              lastReviewDate: null,
               casePerProvinceOptions: {},
               casesPerDayChartOptions: {},
+              casesPerDayEstimationsChartOptions: {},
+              
           }
   },
   components: {
@@ -315,6 +417,7 @@ export default {
       this.totalDeaths = data.totalDeaths;
       this.totalSuspicious = data.totalSuspicious;
       this.totalRecovered = data.totalRecovered;
+      this.lastReviewDate = data.lastReviewDate;
 
       const historic = await getData()
       
@@ -326,7 +429,7 @@ export default {
 
       let start_date = new Date(2020, 3, 10);
 
-      for(var i = 1; i <= 15; i++) {
+      for(var i = 1; i <= historic.history.length + 8; i++) {
         yEstimatedData.push(func(i));
 
         start_date.setDate(start_date.getDate() + 1);
@@ -334,6 +437,7 @@ export default {
       }
       this.casePerProvinceOptions = buildMapChartOptions(data.casePerProvince);
       this.casesPerDayChartOptions = buildChartOptions(xData, yEstimatedData, yRealData);
+      this.casesPerDayEstimationsChartOptions = buildChartEstimationsOptions(xData, yEstimatedData, yRealData);
     }
   },
   computed: {
