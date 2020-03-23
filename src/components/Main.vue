@@ -75,39 +75,56 @@
           </div>
         </div>
       </section>
-
-       <section id="statistics" class="bg-light">
+      
+      <section id="statistics" class="bg-light">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto">
               <div class="card">
-              <div class="card-body">
-                 <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
+                <div class="card-body">
+                  <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
+                </div>
               </div>
-            </div>
+              <div id="from_cuba" align="left">
+                <b>Basado en:</b>
+                <div>
+                  <a href="http://www.acn.cu" target="_blank">Agencia Cubana de Noticias</a>
+                </div>
+                <div>
+                  <a href="http://www.cubadebate.cu/?s=covid+cuba+casos" target="_blank">Cubadebate</a>
+                </div>
+              </div>
             </div>
           </div>
           <br>
           <div class="row">
             <div class="col-lg-12 mx-auto">
               <div class="card">
-              <div class="card-body">
-                 <highcharts :options="casesPerDayEstimationsChartOptions" class="chart"></highcharts>
+                <div class="card-body">
+                  <highcharts :options="casesPerDayEstimationsChartOptions" class="chart"></highcharts>
+                </div>
               </div>
-            </div>
             </div>
           </div>
           <br>
           <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <div class="card">
+          <div class="col-lg-12 mx-auto">
+            <div class="card">
               <div class="card-body">
-                  <highcharts :constructor-type="'mapChart'" :options="casePerProvinceOptions" class="map" ></highcharts>
+                <highcharts :constructor-type="'mapChart'" :options="casePerProvinceOptions" class="map"></highcharts>
               </div>
             </div>
-            </div>
+            <div id="from_worl" align="left">
+                <b>Basado en:</b>
+                <div>
+                  <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank">Global Cases by CSSE at Johns Hopkins University (JHU)</a>
+                </div>
+                <div>
+                  <a href="https://www.worldometers.info/coronavirus" target="_blank">World O Meters</a>
+                </div>
+              </div>
           </div>
-
+          </div>
         </div>
       </section>
 
