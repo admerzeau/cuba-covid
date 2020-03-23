@@ -1,6 +1,25 @@
 {
-    "totalcases" : 35,
-    "totaldeaths" : 1, 
-    "totalsuspicious" : 954,
-    "totalrecovered" : 0
+    "totalCases" : 35,
+    "totalDeaths" : 1, 
+    "totalSuspicious" : 954,
+    "totalRecovered" : 0,
+    "casePerProvince":  [
+        ["cu-ho", 2],
+        ["cu-ar", 1],
+        ["cu-ma", 2],
+        ["cu-vc", 4],
+        ["cu-5812", 0],
+        ["cu-ij", 0],
+        ["cu-ss", 2],
+        ["cu-ca", 0],
+        ["cu-cm", 1],
+        ["cu-ch", 16],
+        ["cu-cf", 0],
+        ["cu-gu", 0],
+        ["cu-gr", 3],
+        ["cu-lt", 0],
+        ["cu-sc", 2],
+        ["cu-mq", 0],
+        ["cu-pr", 3]
+    ]
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Main title="Cuba vs Covid19" subtitle="Reportes estadísticos del virus en Cuba"/>
+    <Main title="Cuba vs Covid19" subtitle ="Reportes estadísticos del virus en Cuba"/>
   </div>
 </template>
 
