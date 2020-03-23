@@ -28,7 +28,7 @@
         <div class="container">
           <h3> Cuba vs Covid19 </h3>
           <br>
-          <p>Las siguientes graficas muestran la informaci'on actualizada del {{ lastReviewDate }}. La estimacion de casos se basa en un simple metodo estadistico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la informacion si le parece util.</p>
+          <p>Las siguientes gráficas muestran la información actualizada del {{ lastReviewDate }}. La estimación de casos se basa en un simple método estadístico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la información si le parece útil.</p>
         </div>
       </section>
       <section id="cases">
@@ -133,7 +133,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Mantenga el distanciamiento social</h5>
-                    <p class="card-text">Mantenga al menos 1 metro (3 pies) de distancia entre usted y las demás personas, particularmente aquellas que tosan, 
+                    <p class="card-text">Mantenga al menos 1 metro de distancia entre usted y las demás personas, particularmente aquellas que tosan, 
                       estornuden y tengan fiebre.</p>
                   </div>
                 </div>
