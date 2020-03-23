@@ -262,42 +262,6 @@ const buildChartOptions = (xData, yEstimatedData, yRealData) => ({
             }]      
 });
 
-
-const createEvaluationFunc = (a,b) => (x) => Math.ceil(a * Math.pow(Math.E, b * x))
-
-const buildChart = (xData, yEstimatedData, yRealData) => ({
-            chart: {
-                type: 'spline'
-            },
-            title: {
-                text: 'Casos confirmados'
-            },
-            xAxis: {
-                categories: xData
-            },
-            yAxis: {
-                title: {
-                    text: 'Casos'
-                }
-            },
-            tooltip: {
-                crosshairs: true,
-                shared: true
-            },
-            plotOptions: {
-                spline: {
-                }
-            },
-            series: [{
-                name: 'Estimado',
-                data: yEstimatedData
-
-            }, {
-                name: 'Real',
-                data: yRealData
-            }]
-        })
-
 export default {
   name: 'Main',
   
