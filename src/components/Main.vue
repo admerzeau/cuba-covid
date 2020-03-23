@@ -82,6 +82,7 @@
             <div class="col-lg-10 mx-auto">
               <h2>Estadística</h2>
               <p class="lead">Generar gráfica con los datos del backend.</p>
+              <highcharts :constructor-type="'stockChart'" :options="chartOptions"></highcharts>
             </div>
           </div>
         </div>
@@ -141,15 +142,34 @@
 <script>
 
 var data = require("../../data.json");
+import {Chart} from 'highcharts-vue'
+import Highcharts from 'highcharts'
+import stockInit from 'highcharts/modules/stock'
+import getData from '../services/service'
+ 
+stockInit(Highcharts)
 
 export default {
   name: 'Main',
-  beforeMount: function(){
+  data() {
+        return {
+            chartOptions: {
+                series: [{
+                    data: [1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3,1, 2, 3]
+                }]
+            }
+        }
+    },
+  components: {
+    highcharts: Chart 
+  },
+  beforeMount: async function (){
     
     this.totalcases = data.totalcases;
     this.totaldeaths = data.totaldeaths;
     this.totalsuspicious = data.totalsuspicious;
     this.totalrecovered = data.totalrecovered;
+    this.historic = await getData()
 
   },
   computed: {
@@ -166,6 +186,7 @@ export default {
     totaldeaths: Number, 
     totalsuspicious: Number,
     totalrecovered: Number,
+    historic: []
   }
 }
 </script>
