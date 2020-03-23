@@ -28,7 +28,7 @@
         <div class="container">
           <h3> Cuba vs Covid19 </h3>
           <br>
-          <p>Las siguientes gráficas muestran la información actualizada del {{ lastReviewDate }}. La estimación de casos se basa en un simple método estadístico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la información si le parece útil.</p>
+          <p>Las siguientes gráficas muestran la información actualizada de <b>{{ lastReviewDate }}</b>. La estimación de casos se basa en un simple método estadístico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la información si le parece útil.</p>
         </div>
       </section>
       <section id="cases">
@@ -177,7 +177,7 @@
 
       <footer class="py-5 bg-dark">
         <div class="container">
-          <p class="m-0 text-center text-white">Copyright &copy; 2020 El Grupito</p>
+          <p class="m-0 text-center text-white">Copyright &copy; 2020 <a href = "mailto:elgrupito.cu@gmail.com">El Grupito</a></p>
         </div>
         <!-- /.container -->
       </footer>
