@@ -42,7 +42,7 @@
                         <div class="card-header text-white">Total de casos</div>
                         <div class="card-body text-white">
                             <h3 class="card-title"><i class="fas fa-check"></i>  
-                              <number ref="totalCases" :from="numberFrom" :to="totalCases" :duration="duration" :delay="delay" :easing="easing"/>
+                              <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalCases" :duration="duration" :delay="delay" :easing="easing"/>
                             </h3>
                           </div>
                     </div>
@@ -52,7 +52,7 @@
                       <div class="card-header text-white">Total de Muertes</div>
                         <div class="card-body text-white">
                             <h3 class="card-title"><i class="fas fa-frown"></i> 
-                              <number ref="totalCases" :from="numberFrom" :to="totalDeaths" :duration="duration" :delay="delay" :easing="easing"/>
+                              <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalDeaths" :duration="duration" :delay="delay" :easing="easing"/>
                             </h3>
                           </div>
                     </div>
@@ -62,7 +62,7 @@
                       <div class="card-header text-white">Total de Sospechosos</div>
                         <div class="card-body text-white">
                             <h3 class="card-title"><i class="fas fa-user-md"></i> 
-                              <number ref="totalCases" :from="numberFrom" :to="totalSuspicious" :duration="duration" :delay="delay" :easing="easing"/>
+                              <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalSuspicious" :duration="duration" :delay="delay" :easing="easing"/>
                             </h3>
                           </div>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="card-header text-white">Total de Recuperados</div>
                         <div class="card-body text-white">
                             <h3 class="card-title"><i class="fas fa-child"></i> 
-                              <number ref="totalCases" :from="numberFrom" :to="totalRecovered" :duration="duration" :delay="delay" :easing="easing"/>
+                              <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalRecovered" :duration="duration" :delay="delay" :easing="easing"/>
                             </h3>
                           </div>
                     </div>
