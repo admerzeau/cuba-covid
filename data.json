@@ -7,19 +7,19 @@
     "casePerProvince":  [
         ["cu-ho", 3],
         ["cu-ar", 1],
-        ["cu-ma", 2],
-        ["cu-vc", 6],
+        ["cu-ma", 3],
         ["cu-ij", 0],
-        ["cu-ss", 2],
-        ["cu-ca", 0],
+        ["cu-ca", 1],
         ["cu-cm", 1],
-        ["cu-ch", 18],
         ["cu-cf", 0],
         ["cu-gu", 0],
         ["cu-gr", 3],
-        ["cu-lt", 0],
-        ["cu-sc", 2],
         ["cu-mq", 0],
-        ["cu-pr", 3]
+		["cu-pr", 3],
+		["cu-ch", 15],
+		["cu-vc", 6],
+		["cu-ss", 8],
+		["cu-sc", 2],
+		["cu-lt", 1]
     ]
 }
