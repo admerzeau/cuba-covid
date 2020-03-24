@@ -2,7 +2,7 @@
     "totalCases" : 48,
     "totalDeaths" : 1, 
     "totalSuspicious" : 1229,
-    "totalRecovered" : 0,
+    "totalRecovered" : 1,
     "lastReviewDate": "Marzo 24, 11:00 am",
     "casePerProvince":  [
         ["cu-ho", 3],
