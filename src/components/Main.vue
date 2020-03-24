@@ -12,7 +12,7 @@
                 <a class="nav-link js-scroll-trigger" href="#cases">Casos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#statistics">Estadística</a>
+                <a class="nav-link js-scroll-trigger" href="#statistics">Estadísticas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#recomendations">Recomendaciones</a>
@@ -41,8 +41,9 @@
                     <div class="card bg-warning">
                         <div class="card-header text-white">Total de casos</div>
                         <div class="card-body text-white">
-                            <h3 class="card-title"><i class="fas fa-check"></i> {{totalCases}}</h3>
-                           
+                            <h3 class="card-title"><i class="fas fa-check"></i>  
+                              <number ref="totalCases" :from="numberFrom" :to="totalCases" :duration="duration" :delay="delay" :easing="easing"/>
+                            </h3>
                           </div>
                     </div>
                 </div>
@@ -50,7 +51,9 @@
                     <div class="card bg-danger">
                       <div class="card-header text-white">Total de Muertes</div>
                         <div class="card-body text-white">
-                            <h3 class="card-title"><i class="fas fa-frown"></i> {{totalDeaths}}</h3>
+                            <h3 class="card-title"><i class="fas fa-frown"></i> 
+                              <number ref="totalCases" :from="numberFrom" :to="totalDeaths" :duration="duration" :delay="delay" :easing="easing"/>
+                            </h3>
                           </div>
                     </div>
                 </div>
@@ -58,7 +61,9 @@
                     <div class="card bg-info">
                       <div class="card-header text-white">Total de Sospechosos</div>
                         <div class="card-body text-white">
-                            <h3 class="card-title"><i class="fas fa-user-md"></i> {{totalSuspicious}}</h3>
+                            <h3 class="card-title"><i class="fas fa-user-md"></i> 
+                              <number ref="totalCases" :from="numberFrom" :to="totalSuspicious" :duration="duration" :delay="delay" :easing="easing"/>
+                            </h3>
                           </div>
                     </div>
                 </div>
@@ -66,7 +71,9 @@
                     <div class="card bg-success">
                         <div class="card-header text-white">Total de Recuperados</div>
                         <div class="card-body text-white">
-                            <h3 class="card-title"><i class="fas fa-child"></i> {{totalRecovered}}</h3>
+                            <h3 class="card-title"><i class="fas fa-child"></i> 
+                              <number ref="totalCases" :from="numberFrom" :to="totalRecovered" :duration="duration" :delay="delay" :easing="easing"/>
+                            </h3>
                           </div>
                     </div>
                 </div>
@@ -79,7 +86,8 @@
       <section id="statistics" class="bg-light">
         <div class="container">
           <div class="row">
-            <div class="col-lg-12 mx-auto">
+            <div class="col-lg-12 mx-auto">              
+              <h2>Estadísticas</h2>
               <div class="card">
                 <div class="card-body">
                   <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
@@ -416,7 +424,10 @@ export default {
               casePerProvinceOptions: {},
               casesPerDayChartOptions: {},
               casesPerDayEstimationsChartOptions: {},
-              
+              numberFrom: 0,
+              duration: 3,
+              delay: 1,
+              easing: 'Power0.easeNone'
           }
   },
   components: {
