@@ -51,8 +51,7 @@
                     <div class="card bg-danger">
                       <div class="card-header text-white">Total de Muertes</div>
                         <div class="card-body text-white">
-                            <h3 class="card-title"><i class="fas fa-frown"></i> 
-                              <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalDeaths" :duration="duration" :delay="delay" :easing="easing"/>
+                            <h3 class="card-title"><i class="fas fa-frown"></i> {{totalDeaths}}
                             </h3>
                           </div>
                     </div>
@@ -71,8 +70,7 @@
                     <div class="card bg-success">
                         <div class="card-header text-white">Total de Recuperados</div>
                         <div class="card-body text-white">
-                            <h3 class="card-title"><i class="fas fa-child"></i> 
-                              <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalRecovered" :duration="duration" :delay="delay" :easing="easing"/>
+                            <h3 class="card-title"><i class="fas fa-child"></i> {{totalRecovered}}
                             </h3>
                           </div>
                     </div>
