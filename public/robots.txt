@@ -1,0 +1,5 @@
+# Grupo 1
+User-agent: *
+Allow: /
+
+Sitemap: http://cubacovid19.com/sitemap.xml

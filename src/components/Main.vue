@@ -12,7 +12,7 @@
                 <a class="nav-link js-scroll-trigger" href="#cases">Casos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#statistics">Estadística</a>
+                <a class="nav-link js-scroll-trigger" href="#statistics">Estadísticas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#recomendations">Recomendaciones</a>
@@ -24,14 +24,13 @@
           </div>
         </div>
       </nav>
-
-      <header class="bg-primary text-white">
-        <div class="container text-center">
-          <h1>{{title}}</h1>
-          <p class="lead">{{subtitle}}</p>
+      <section id="page-top">
+        <div class="container">
+          <h3> Cuba vs Covid19 </h3>
+          <br>
+          <p>Las siguientes gráficas muestran la información actualizada de <b>{{ lastReviewDate }}</b>. La estimación de casos se basa en un simple método estadístico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la información si le parece útil.</p>
         </div>
-      </header>
-
+      </section>
       <section id="cases">
         <div class="container">
           <div class="row">
@@ -40,33 +39,39 @@
               <div class="row">
                 <div class="col-12 col-sm-3 mt-2">
                     <div class="card bg-warning">
+                        <div class="card-header text-white">Total de casos</div>
                         <div class="card-body text-white">
-                            <h3 class="card-title"><i class="fas fa-check"></i> {{totalcases}}</h3>
-                            <p class="card-text">Total de casos</p>
+                            <h3 class="card-title"><i class="fas fa-check"></i>  
+                              <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalCases" :duration="duration" :delay="delay" :easing="easing"/>
+                            </h3>
                           </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-3 mt-2">
                     <div class="card bg-danger">
-                        <div class="card-body">
-                            <h3 class="card-title"><i class="fas fa-frown"></i> {{totaldeaths}}</h3>
-                            <p class="card-text">Muertes</p>
+                      <div class="card-header text-white">Total de Muertes</div>
+                        <div class="card-body text-white">
+                            <h3 class="card-title"><i class="fas fa-frown"></i> {{totalDeaths}}
+                            </h3>
                           </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-3 mt-2">
                     <div class="card bg-info">
-                        <div class="card-body">
-                            <h3 class="card-title"><i class="fas fa-user-md"></i> {{totalsuspicious}}</h3>
-                            <p class="card-text">Sospechosos</p>
+                      <div class="card-header text-white">Total de Sospechosos</div>
+                        <div class="card-body text-white">
+                            <h3 class="card-title"><i class="fas fa-user-md"></i> 
+                              <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalSuspicious" :duration="duration" :delay="delay" :easing="easing"/>
+                            </h3>
                           </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-3 mt-2">
                     <div class="card bg-success">
-                        <div class="card-body">
-                            <h3 class="card-title"><i class="fas fa-child"></i> {{totalrecovered}}</h3>
-                            <p class="card-text">Recuperados</p>
+                        <div class="card-header text-white">Total de Recuperados</div>
+                        <div class="card-body text-white">
+                            <h3 class="card-title"><i class="fas fa-child"></i> {{totalRecovered}}
+                            </h3>
                           </div>
                     </div>
                 </div>
@@ -75,15 +80,56 @@
           </div>
         </div>
       </section>
-
-       <section id="statistics" class="bg-light">
+      
+      <section id="statistics" class="bg-light">
         <div class="container">
           <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <h2>Estadística</h2>
-              <p class="lead">Generar gráfica con los datos del backend.</p>
-              <highcharts :constructor-type="'stockChart'" :options="chartOptions"></highcharts>
+            <div class="col-lg-12 mx-auto">              
+              <h2>Estadísticas</h2>
+              <div class="card">
+                <div class="card-body">
+                  <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
+                </div>
+              </div>
+              <div id="from_cuba" align="left">
+                <b>Basado en:</b>
+                <div>
+                  <a href="http://www.acn.cu" target="_blank">Agencia Cubana de Noticias</a>
+                </div>
+                <div>
+                  <a href="http://www.cubadebate.cu/?s=covid+cuba+casos" target="_blank">Cubadebate</a>
+                </div>
+              </div>
             </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <highcharts :options="casesPerDayEstimationsChartOptions" class="chart"></highcharts>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+          <div class="col-lg-12 mx-auto">
+            <div class="card">
+              <div class="card-body">
+                <highcharts :constructor-type="'mapChart'" :options="casePerProvinceOptions" class="map"></highcharts>
+              </div>
+            </div>
+            <div id="from_worl" align="left">
+                <b>Basado en:</b>
+                <div>
+                  <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank">Global Cases by CSSE at Johns Hopkins University (JHU)</a>
+                </div>
+                <div>
+                  <a href="https://www.worldometers.info/coronavirus" target="_blank">World O Meters</a>
+                </div>
+              </div>
+          </div>
           </div>
         </div>
       </section>
@@ -91,30 +137,53 @@
       <section id="recomendations">
         <div class="container">
           <div class="row">
-            <div class="col-lg-10 mx-auto">
+            <div class="col-lg-12 mx-auto">
               <h2>Recomendaciones</h2>
-              <div class="content-block">
-                    <h5>Lávese las manos frecuentemente</h5>
-                    <p class="text-justify">Lávese las manos con frecuencia con un desinfectante de manos a base de alcohol o con agua y jabón.</p>
-
-                    <h5>Adopte medidas de higiene respiratoria</h5>
-                    <p class="text-justify">Al toser o estornudar, cúbrase la boca y la nariz con el codo flexionado o con un pañuelo; tire el pañuelo inmediatamente y lávese las manos con un 
-                      desinfectante de manos a base de alcohol, o con agua y jabón.</p>               
-
-                    <h5>Mantenga el distanciamiento social</h5>
-                    <p class="text-justify">Mantenga al menos 1 metro (3 pies) de distancia entre usted y las demás personas, particularmente aquellas que tosan, 
+              <div class="card-deck">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Lávese las manos frecuentemente</h5>
+                    <p class="card-text">Lávese las manos con frecuencia con un desinfectante de manos a base de alcohol o con agua y jabón.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Adopte medidas de higiene respiratoria</h5>
+                    <p class="card-text">Al toser o estornudar, cúbrase la boca y la nariz con el codo flexionado o con un pañuelo; tire el pañuelo inmediatamente y lávese las manos con un 
+                      desinfectante de manos a base de alcohol, o con agua y jabón.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Mantenga el distanciamiento social</h5>
+                    <p class="card-text">Mantenga al menos 1 metro de distancia entre usted y las demás personas, particularmente aquellas que tosan, 
                       estornuden y tengan fiebre.</p>
-
-                    <h5>Evite tocarse los ojos, la nariz y la boca</h5>
-                    <p class="text-justify">Las manos tocan muchas superficies que pueden estar contaminadas con el virus. Si se toca los ojos, la nariz o la boca con las manos
-                      contaminadas, puedes transferir el virus de la superficie a si mismo.</p>
-
-                    <h5>Si tiene fiebre, tos y dificultad para respirar, solicite atención médica a tiempo</h5>
-                    <p class="text-justify">Indique a su representante de área de salud si ha viajado a un país en el que se haya notificado la presencia del COVID-19, o si ha tenido 
-                      un contacto con alguien que haya viajado y tenga síntomas respiratorios.</p>                  
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <br>
+           <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <div class="card-deck">
+                  <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Evite tocarse los ojos, la nariz y la boca</h5>
+                    <p class="card-text">Las manos tocan muchas superficies que pueden estar contaminadas con el virus. Si se toca los ojos, la nariz o la boca con las manos
+                      contaminadas, puedes transferir el virus de la superficie a si mismo.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Si tiene fiebre, tos y dificultad para respirar, solicite atención médica a tiempo</h5>
+                    <p class="card-text">Indique a su representante de área de salud si ha viajado a un país en el que se haya notificado la presencia del COVID-19, o si ha tenido 
+                      un contacto con alguien que haya viajado y tenga síntomas respiratorios.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
         </div>
       </section>
 
@@ -131,7 +200,7 @@
 
       <footer class="py-5 bg-dark">
         <div class="container">
-          <p class="m-0 text-center text-white">Copyright &copy; 2020 El Grupito</p>
+          <p class="m-0 text-center text-white">Copyright &copy; 2020 <a href = "mailto:elgrupito.cu@gmail.com">El Grupito</a></p>
         </div>
         <!-- /.container -->
       </footer>
@@ -145,70 +214,239 @@ var data = require("../../data.json");
 import {Chart} from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import stockInit from 'highcharts/modules/stock'
+import mapInit from 'highcharts/modules/map'
+import darkUnica from 'highcharts/themes/dark-unica'
 import getData from '../services/service'
+import cubaMap from '../maps/cuba'
+
  
 stockInit(Highcharts)
+mapInit(Highcharts)
+cubaMap(Highcharts)
+darkUnica(Highcharts);
 
-
+Highcharts.setOptions({
+    lang: {
+            loading: 'Cargando...',
+            months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            weekdays: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            shortMonths: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            exportButtonTitle: "Exportar",
+            printButtonTitle: "Importar",
+            rangeSelectorFrom: "Desde",
+            rangeSelectorTo: "Hasta",
+            rangeSelectorZoom: "Período",
+            downloadPNG: 'Descargar imagen PNG',
+            downloadJPEG: 'Descargar imagen JPEG',
+            downloadPDF: 'Descargar imagen PDF',
+            downloadSVG: 'Descargar imagen SVG',
+            printChart: 'Imprimir',
+            resetZoom: 'Reiniciar zoom',
+            resetZoomTitle: 'Reiniciar zoom',
+            thousandsSep: ",",
+            decimalPoint: '.'
+        }
+});
 const createEvaluationFunc = (a,b) => (x) => Math.ceil(a * Math.pow(Math.E, b * x))
+const buildMapChartOptions = (casesPerProvince) => ({
 
-const buildChart = (xData, yEstimatedData, yRealData) => ({
-            chartOptions: {
+                chart: {
+                    map: 'cuba'
+                },
+                title: {
+                    text: 'Casos por provincia'
+                },
+                subtitle: {
+                    text: 'Fuente Minsap'
+                },
+                mapNavigation: {
+                    enabled: true,
+                    buttonOptions: {
+                        verticalAlign: 'bottom'
+                    }
+                },
+               colorAxis: {
+                min: 0,
+                stops: [
+                    [0, Highcharts.color('#8B0000').brighten(1).get()],
+                    [0.2, Highcharts.color('#8B0000').brighten(0.8).get()],
+                    [0.4, Highcharts.color('#8B0000').brighten(0.5).get()],
+                    [0.6, Highcharts.color('#8B0000').brighten(0.2).get()],
+                    [0.8, Highcharts.color('#8B0000').brighten(0).get()],
+                    [1, Highcharts.color('#8B0000').brighten(-0.3).get()]
+                ]
+            },
+                plotOptions: {
+                  map: {
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF'
+                        }
+                  }
+                },
+                series: [{
+                    data: casesPerProvince,
+                    name: 'Datos de Cuba',
+                    states: {
+                        hover: {
+                            color: '#BADA55'
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.value}'
+                    }
+                }]
+});
+
+const buildChartOptions = (xData, yEstimatedData, yRealData) => ({
+           
             chart: {
                 type: 'spline'
             },
             title: {
                 text: 'Casos confirmados'
             },
+            subtitle: {
+              text: 'Información obtenida del MINSAP'
+            },
             xAxis: {
-                categories: xData
+                categories: xData,
+                title: {
+                  text: 'Fecha'
+                },
+                labels: {
+                  style: {
+                      fontSize: '1.2em',
+                  }}
             },
             yAxis: {
                 title: {
-                    text: 'Casos'
-                }
+                    text: '# de Casos'
+                },
+                labels: {
+                  style: {
+                      fontSize: '1.2em',
+                  }}
             },
             tooltip: {
                 crosshairs: true,
                 shared: true
             },
             plotOptions: {
-                spline: {
-                }
+                spline:  {
+                  dataLabels: {
+                      enabled: true,
+                      style: {
+                      fontSize: '2em',
+                      },
+                  },
+                  enableMouseTracking: true
+              },
+            },
+            series: [
+              {
+                name: 'Casos confirmados',
+                data: yRealData,
+                color: '#FFFF00',
+            }]      
+});
+
+const buildChartEstimationsOptions = (xData, yEstimatedData, yRealData) => ({
+           
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Casos confirmados & Casos estimados'
+            },
+            subtitle: {
+              text: 'Los datos estimados son una predicción estadística basados en los casos confirmados'
+            },
+            xAxis: {
+                categories: xData,
+                title: {
+                  text: 'Fecha'
+                },
+                labels: {
+                  style: {
+                      fontSize: '1.2em',
+                  }}
+            },
+            yAxis: {
+                title: {
+                    text: '# Casos'
+                },
+                labels: {
+                  style: {
+                      fontSize: '1.2em',
+                  }}
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline:  {
+                  dataLabels: {
+                      enabled: true,
+                      style: {
+                      fontSize: '2em',
+                      },
+                  },
+                  enableMouseTracking: true
+              },
             },
             series: [{
-                name: 'Estimado',
-                data: yEstimatedData
+                name: 'Estimados',
+                data: yEstimatedData,
+                color: '#8B0000'
 
             }, {
-                name: 'Real',
-                data: yRealData
-            }]
-        }
-        })
+                name: 'Confirmados',
+                data: yRealData,
+                color: '#FFFF00',
+            }]      
+});
 
 export default {
   name: 'Main',
+  
   data() {
-        return buildChart([],[],[])
-    },
+        return {
+              totalCases: 0,
+              totalDeaths: 0, 
+              totalSuspicious: 0,
+              totalRecovered: 0,
+              lastReviewDate: null,
+              casePerProvinceOptions: {},
+              casesPerDayChartOptions: {},
+              casesPerDayEstimationsChartOptions: {},
+              numberFrom: 0,
+              duration: 3,
+              delay: 1,
+              easing: 'Power0.easeNone'
+          }
+  },
   components: {
     highcharts: Chart 
   },
-  beforeMount: function (){
-    
-    this.totalcases = data.totalcases;
-    this.totaldeaths = data.totaldeaths;
-    this.totalsuspicious = data.totalsuspicious;
-    this.totalrecovered = data.totalrecovered;
+  beforeMount: async function (){
+     await this.getInitialData();
   },
-  created() {
-            this.getInitialData()
-  },
+  
   methods: {
+    
     async getInitialData() {
-      const historic = await getData()
+      
+      this.totalCases = data.totalCases;
+      this.totalDeaths = data.totalDeaths;
+      this.totalSuspicious = data.totalSuspicious;
+      this.totalRecovered = data.totalRecovered;
+      this.lastReviewDate = data.lastReviewDate;
 
+      const historic = await getData()
+      
       const func = createEvaluationFunc(historic.latest.data.a,historic.latest.data.b)
 
       const yRealData = historic.history.map(e => e.total)
@@ -217,30 +455,25 @@ export default {
 
       let start_date = new Date(2020, 3, 10);
 
-      for(var i = 1; i <= 15; i++) {
+      for(var i = 1; i <= historic.history.length + 8; i++) {
         yEstimatedData.push(func(i));
 
         start_date.setDate(start_date.getDate() + 1);
         xData.push(start_date.getDate() + '/' + start_date.getMonth())
       }
-
-      this.chartOptions = buildChart(xData,yEstimatedData,yRealData)
+      this.casePerProvinceOptions = buildMapChartOptions(data.casePerProvince);
+      this.casesPerDayChartOptions = buildChartOptions(xData, yEstimatedData, yRealData);
+      this.casesPerDayEstimationsChartOptions = buildChartEstimationsOptions(xData, yEstimatedData, yRealData);
     }
   },
   computed: {
-
     deathRate: function() {
       return this.totalcases / this.totaldeaths;
     }
-
   },
   props: {
     title: String,
-    subtitle: String,
-    totalcases: Number,
-    totaldeaths: Number, 
-    totalsuspicious: Number,
-    totalrecovered: Number,
+    subtitle: String
   }
 }
 </script>
@@ -248,7 +481,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  margin: 40px 0 0;
+  margin: 5px 0 0;
 }
 ul {
   list-style-type: none;
