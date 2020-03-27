@@ -142,7 +142,7 @@
             <div class="col-lg-12 mx-auto">
               <div class="card">
                 <div class="card-body"> 
-                  <highcharts :constructor-type="'mapChart'" :options="caseSex" class="map"></highcharts>
+                  <highcharts :options="caseSex"></highcharts>
                 </div>
               </div>
             </div>
@@ -390,7 +390,7 @@ const buildMapChartOptions = (casesPerProvince) => ({
                 }]
 });
 
-const buildSexChartOptions = () => ({
+const buildSexChartOptions = (m, w) => ({
 
     chart: {
         plotBackgroundColor: null,
@@ -420,15 +420,18 @@ const buildSexChartOptions = () => ({
         }
     },
     series: [{
+        name: '',
         colorByPoint: true,
         data: [{
             name: 'Hombres',
-            y: 55.2,
+            y: m,
             sliced: true,
-            selected: true
+            selected: true,
+            color: '#7cb5ec'
         }, {
             name: 'Mujeres',
-            y: 44.8
+            y: w,
+            color: '#f15c80'
         }]
     }]
 });
@@ -560,7 +563,7 @@ export default {
               duration: 3,
               delay: 1,
               easing: 'Power0.easeNone',
-              sex: {}
+              caseSex: {}
           }
   },
   components: {
@@ -579,7 +582,6 @@ export default {
       this.totalSuspicious = data.totalSuspicious;
       this.totalRecovered = data.totalRecovered;
       this.lastReviewDate = data.lastReviewDate;
-      this.sex = data.sex;
 
       const historic = await getData()
       
@@ -600,7 +602,7 @@ export default {
       this.casePerProvinceOptions = buildMapChartOptions(data.casePerProvince);
       this.casesPerDayChartOptions = buildChartOptions(xData, yEstimatedData, yRealData);
       this.casesPerDayEstimationsChartOptions = buildChartEstimationsOptions(xData, yEstimatedData, yRealData);
-      this.caseSex = buildSexChartOptions();
+      this.caseSex = buildSexChartOptions(data.sex.m, data.sex.w);
     }
   },
   computed: {
