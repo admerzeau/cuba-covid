@@ -92,12 +92,12 @@
                 </div>
               </div>
               <div id="from_cuba" align="left">
-                <b>Basado en:</b>
+                <font size="2"><b>Basado en:</b></font>
                 <div>
-                  <a href="http://www.acn.cu" target="_blank">Agencia Cubana de Noticias</a>
+                  <a href="http://www.acn.cu" target="_blank"><font size="2">Agencia Cubana de Noticias</font></a>
                 </div>
                 <div>
-                  <a href="http://www.cubadebate.cu/?s=covid+cuba+casos" target="_blank">Cubadebate</a>
+                  <a href="http://www.cubadebate.cu/?s=covid+cuba+casos" target="_blank"><font size="2">Cubadebate</font></a>
                 </div>
               </div>
             </div>
@@ -121,15 +121,90 @@
               </div>
             </div>
             <div id="from_worl" align="left">
-                <b>Basado en:</b>
+                <font size="2"><b>Basado en:</b></font>
                 <div>
-                  <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank">Global Cases by CSSE at Johns Hopkins University (JHU)</a>
+                  <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank"><font size="2">Global Cases by CSSE at Johns Hopkins University (JHU)</font></a>
                 </div>
                 <div>
-                  <a href="https://www.worldometers.info/coronavirus" target="_blank">World O Meters</a>
+                  <a href="https://www.worldometers.info/coronavirus" target="_blank"><font size="2">World O Meters</font></a>
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mask_build">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <h2>¿Cómo hacer un nasobuco casero?</h2>
+              <div class="card-deck">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Debe ubicar los siguientes materiales</h5>
+                    <div align="left">
+                      <ul class="list-group">
+                        <li>&#9642; Tres trozos de tela de algodón en forma rectangular, con medidas de 20cm x 26cm. La tela debe ser algodón porque es la más óptima para la esterilización.</li>
+                        <li>&#9642; 2 tiras de tela de 86 x 3cm o 2 elásticos para el amarre.</li>
+                        <li>&#9642; Aguja, hilo y también tijeras.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body" >
+                    <h5 class="card-title">Procedimiento</h5>
+                    <div align="left">
+                      <ul class="list-group">
+                        <li>&#9642; Debe coser los tres trozos de tela en las partes superior e inferior para cerrar el nasobuco y vírelo.</li> 
+                        <li>&#9642; Marque el centro por los extremos para fijar los dos pliegues y proceda a coser.</li>
+                        <li>&#9642; Precise el centro de las tiras y hágalas coincidir con el centro del lateral para fijarla.</li>
+                        <li>&#9642; Deberá rematar la punta del tirante y coserlo hasta el final, haciendo lo mismo con el otro tirante.</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
           </div>
+          <br>
+           <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <div class="card-deck">
+                  <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Deber ser colocado adecuadamente</h5>
+                    <p class="card-text">
+                        Lávese bien las manos antes ponerse la mascarilla.
+                        Cúbrase la boca y la nariz con la parte más grande y además cerciórese que no haya espacios entre su rostro y la máscara.
+                        Ate una de las tiras en la cabeza, a la altura de las orejas, mientras que la otra se ata a la altura del cuello.
+                        Evite tocar el nasobuco mientras lo usa o lávese las manos con agua y jabón.
+                        Finalmente, al retirarlo trate de no tocarlo por la parte frontal y hágalo con las tiras.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+           <div id="from_worl" align="left">
+              <font size="2"><b>Basado en:</b></font>
+              <div>
+                <a href="https://www.dimecuba.com/revista/coronavirus-cuba/como-hacer-nasobuco/" target="_blank"><font size="2">Revista Dime Cuba</font></a>
+              </div>
+              <div>
+                <a href="http://www.juventudrebelde.cu/suplementos/asi-de-facil/2020-03-10/como-hacer-un-nasobuco-o-mascarilla-en-casa" target="_blank"><font size="2">Juventud Rebelde</font></a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="documents" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <h2>Zona de descarga</h2>
+            </div>
           </div>
         </div>
       </section>
@@ -425,7 +500,8 @@ export default {
               numberFrom: 0,
               duration: 3,
               delay: 1,
-              easing: 'Power0.easeNone'
+              easing: 'Power0.easeNone',
+              sex: {}
           }
   },
   components: {
@@ -444,6 +520,7 @@ export default {
       this.totalSuspicious = data.totalSuspicious;
       this.totalRecovered = data.totalRecovered;
       this.lastReviewDate = data.lastReviewDate;
+      this.sex = data.sex;
 
       const historic = await getData()
       
