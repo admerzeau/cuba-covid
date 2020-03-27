@@ -18,7 +18,7 @@
                 <a class="nav-link js-scroll-trigger" href="#mask_build">Nasobuco</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#download">Descargar</a>
+                <a class="nav-link js-scroll-trigger" href="#download">Descargas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#recomendations">Recomendaciones</a>
@@ -137,6 +137,16 @@
             </div>
           </div>
           </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <div class="card">
+                <div class="card-body"> 
+                  <highcharts :constructor-type="'mapChart'" :options="caseSex" class="map"></highcharts>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -209,7 +219,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto">
-              <h2>Zona de descarga</h2>
+              <h2>Zona de descargas</h2>
             </div>
           </div>
         </div>
@@ -380,6 +390,49 @@ const buildMapChartOptions = (casesPerProvince) => ({
                 }]
 });
 
+const buildSexChartOptions = () => ({
+
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Casos por sexo'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        colorByPoint: true,
+        data: [{
+            name: 'Hombres',
+            y: 55.2,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Mujeres',
+            y: 44.8
+        }]
+    }]
+});
+
 const buildChartOptions = (xData, yEstimatedData, yRealData) => ({
            
             chart: {
@@ -547,6 +600,7 @@ export default {
       this.casePerProvinceOptions = buildMapChartOptions(data.casePerProvince);
       this.casesPerDayChartOptions = buildChartOptions(xData, yEstimatedData, yRealData);
       this.casesPerDayEstimationsChartOptions = buildChartEstimationsOptions(xData, yEstimatedData, yRealData);
+      this.caseSex = buildSexChartOptions();
     }
   },
   computed: {
