@@ -142,7 +142,17 @@
             <div class="col-lg-12 mx-auto">
               <div class="card">
                 <div class="card-body"> 
-                  <highcharts :options="caseSex"></highcharts>
+                  <highcharts :options="casePerSex"></highcharts>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <div class="card">
+                <div class="card-body"> 
+                  <highcharts :options="casePerAge"></highcharts>
                 </div>
               </div>
             </div>
@@ -436,6 +446,53 @@ const buildSexChartOptions = (m, w) => ({
     }]
 });
 
+const buildAgeChartOptions = (data_age) => ({
+
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Distribución por rangos de edad'
+    },
+    subtitle: {
+        text: 'Fuente Minsap'
+    },
+    xAxis: {
+        categories: ['0-18', '19-40', '41-60', '61 o más', 'Desconocido'],
+        title: {
+            text: 'Rango de edades'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Personas',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' millions'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Diagnosticados',
+        data: data_age,
+        color: '#ffff00'
+    }]
+});
+
 const buildChartOptions = (xData, yEstimatedData, yRealData) => ({
            
             chart: {
@@ -563,7 +620,8 @@ export default {
               duration: 3,
               delay: 1,
               easing: 'Power0.easeNone',
-              caseSex: {}
+              casePerSex: {},
+              casePerAge: {}
           }
   },
   components: {
@@ -602,7 +660,8 @@ export default {
       this.casePerProvinceOptions = buildMapChartOptions(data.casePerProvince);
       this.casesPerDayChartOptions = buildChartOptions(xData, yEstimatedData, yRealData);
       this.casesPerDayEstimationsChartOptions = buildChartEstimationsOptions(xData, yEstimatedData, yRealData);
-      this.caseSex = buildSexChartOptions(data.sex.m, data.sex.w);
+      this.casePerSex = buildSexChartOptions(data.sex.m, data.sex.w);
+      this.casePerAge = buildAgeChartOptions(data.casePerAge);
     }
   },
   computed: {
