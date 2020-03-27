@@ -15,6 +15,12 @@
                 <a class="nav-link js-scroll-trigger" href="#statistics">Estadísticas</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#mask_build">Nasobuco</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#download">Descargar</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#recomendations">Recomendaciones</a>
               </li>
               <li class="nav-item">
@@ -199,7 +205,7 @@
         </div>
       </section>
 
-      <section id="documents" class="bg-light">
+      <section id="download" class="bg-light">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto">
