@@ -230,6 +230,36 @@
           <div class="row">
             <div class="col-lg-12 mx-auto">
               <h2>Zona de descargas</h2>
+              <div class="list-group">
+                <a href="./download/handbook.pdf" download="Manual de Prevención y Tratamiento de COVID-19" class="list-group-item list-group-item-action align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><i class="fas fa-file-pdf"></i> Manual de Prevención y Tratamiento de COVID-19</h5>
+                    <small>4.59 MB</small>
+                  </div>
+                  <p class="text-muted">Guía informativa sobre la experiencia clínica de cómo tratar este nuevo coronavirus. La guía de tratamientos ofrece consejos y referencias sobre la pandemia al personal médico de todo el mundo que está a punto de unirse a la guerra.</p>
+                </a>
+                <a href="./download/ibuprofeno.pdf" download="Ibuprofeno y COVID-19" class="list-group-item list-group-item-action align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><i class="fas fa-file-pdf"></i> Ibuprofeno y COVID-19</h5>
+                    <small>246 KB</small>
+                  </div>
+                  <p class="text-muted">Comunicado respecto de las informaciones surgidas sobre el peligro de usar ibuprofeno en infecciones por COVID-19</p>
+                </a>
+                <a href="./download/interferon.pdf" download="Interferón e Inmunidad a las Infecciones Virales" class="list-group-item list-group-item-action align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><i class="fas fa-file-pdf"></i> Interferón e Inmunidad a las Infecciones Virales</h5>
+                    <small>133 KB</small>
+                  </div>
+                  <p class="text-muted">Descripción, historia y mecanismo de acción del interferón.</p>
+                </a>
+                <a href="./download/interferones_problemas.pdf" download="Eventos-adversos-Interferones-Bogota" class="list-group-item list-group-item-action align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><i class="fas fa-file-pdf"></i> Eventos adversos y Problemas relacionados con Interferones en Bogota</h5>
+                    <small>2.36 MB</small>
+                  </div>
+                  <p class="text-muted">Eventos adversos y Problemas relacionados con medicamentos Interferones Reportados en Bogota D.C. 2008 – 2007. Trabajo de Grado.</p>
+                </a>                
+              </div>
             </div>
           </div>
         </div>
@@ -660,7 +690,7 @@ export default {
       this.casePerProvinceOptions = buildMapChartOptions(data.casePerProvince);
       this.casesPerDayChartOptions = buildChartOptions(xData, yEstimatedData, yRealData);
       this.casesPerDayEstimationsChartOptions = buildChartEstimationsOptions(xData, yEstimatedData, yRealData);
-      this.casePerSex = buildSexChartOptions(data.sex.m, data.sex.w);
+      this.casePerSex = buildSexChartOptions(data.casePerSex.m, data.casePerSex.w);
       this.casePerAge = buildAgeChartOptions(data.casePerAge);
     }
   },
