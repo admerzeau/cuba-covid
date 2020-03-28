@@ -681,7 +681,7 @@ export default {
 
       let start_date = new Date(2020, 3, 10);
 
-      for(var i = 1; i <= historic.history.length + 8; i++) {
+      for(var i = 1; i <= historic.history.length + 5; i++) {
         yEstimatedData.push(func(i));
 
         start_date.setDate(start_date.getDate() + 1);
