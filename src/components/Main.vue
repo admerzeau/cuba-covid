@@ -116,20 +116,11 @@
         </div>
         <div class="row">
           <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
-            <div class="card">
-              <div class="card-body">
-                <highcharts :constructor-type="'mapChart'" :options="casePerProvinceOptions" class="map"></highcharts>
+              <div class="card">
+                <div class="card-body"> 
+                  <highcharts :options="casePerAge"></highcharts>
+                </div>
               </div>
-            </div>
-            <div id="from_worl" class="text-center">
-                <font size="2"><b>Basado en:</b></font>
-                <div>
-                  <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank"><font size="2">Global Cases by CSSE at Johns Hopkins University (JHU)</font></a>
-                </div>
-                <div>
-                  <a href="https://www.worldometers.info/coronavirus" target="_blank"><font size="2">World O Meters</font></a>
-                </div>
-            </div>
           </div>
           <div class="col-12 col-md-6 col-lg-5 mr-lg-auto">
             <div class="card">
@@ -143,9 +134,18 @@
           <div class="row">
             <div class="col-lg-12 mx-auto">
               <div class="card">
-                <div class="card-body"> 
-                  <highcharts :options="casePerAge"></highcharts>
+                <div class="card-body">
+                  <highcharts :constructor-type="'mapChart'" :options="casePerProvinceOptions" class="map"></highcharts>
                 </div>
+              </div>
+              <div id="from_worl" class="text-center">
+                  <font size="2"><b>Basado en:</b></font>
+                  <div>
+                    <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank"><font size="2">Global Cases by CSSE at Johns Hopkins University (JHU)</font></a>
+                  </div>
+                  <div>
+                    <a href="https://www.worldometers.info/coronavirus" target="_blank"><font size="2">World O Meters</font></a>
+                  </div>
               </div>
             </div>
           </div>
