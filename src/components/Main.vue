@@ -21,6 +21,9 @@
                 <a class="nav-link js-scroll-trigger" href="#download">Descargas</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#survey">Encuesta</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#recomendations">Recomendaciones</a>
               </li>
               <li class="nav-item">
@@ -259,6 +262,269 @@
         </div>
       </section>
 
+      <section id="survey">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 mx-auto">
+              <h2>Encuesta</h2>              
+              <form id="survey_form">
+                <form-wizard  ref="survey_form" 
+                  title="" 
+                  subtitle="Esta encuesta es anónima y nuestro sistema no recopila ninguna información brindada por usted."
+                  nextButtonText="Siguiente"
+                  backButtonText="Anterior"
+                  finishButtonText="Finalizar"
+                  step-size="xs"
+                  color="#20a0ff" 
+                  @on-complete="onSurveyComplete">
+                   <tab-content>
+                      <h5>¿Ha estado viajando al extranjero en las últimas 4 semanas?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="journey" id="journey_0" value="1">
+                          <label class="form-check-label" for="journey_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="journey" id="journey_1" value="0">
+                          <label class="form-check-label" for="journey_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Ha tenido contacto cercano con un caso confirmado?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="confirmed" id="confirmed_0" value="1">
+                          <label class="form-check-label" for="confirmed_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="confirmed" id="confirmed_1" value="0">
+                          <label class="form-check-label" for="confirmed_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Ha tenido contacto cercano con un caso sospechoso?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="suspect" id="suspect_0" value="1">
+                          <label class="form-check-label" for="suspect_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="suspect" id="suspect_1" value="0">
+                          <label class="form-check-label" for="suspect_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Cuántos años tiene?</h5>                    
+                      <div class="form-check row">
+                        <div class="col-5 col-md-3 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="age" id="age_0" value="0">
+                          <label class="form-check-label" for="age_0">
+                            Menos de 40
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-5 col-md-3 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="age" id="age_1" value="1">
+                          <label class="form-check-label" for="age_1">
+                            Entre 40 y 50
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-5 col-md-3 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="age" id="age_2" value="2">
+                          <label class="form-check-label" for="age_2">
+                            Entre 51 y 60
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-5 col-md-3 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="age" id="age_3" value="3">
+                          <label class="form-check-label" for="age_3">
+                            Entre 61 y 70
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-5 col-md-3 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="age" id="age_4" value="4">
+                          <label class="form-check-label" for="age_4">
+                            Entre 71 y 80
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-5 col-md-3 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="age" id="age_5" value="5">
+                          <label class="form-check-label" for="age_5">
+                            Más de 80
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Usted fuma?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="smoke" id="smoke_0" value="1">
+                          <label class="form-check-label" for="smoke_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="smoke" id="smoke_1" value="0">
+                          <label class="form-check-label" for="smoke_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>                   
+                    <tab-content>
+                      <h5>¿Ha tenido síntomas respiratorios en los últimos 14 días?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="symtoms" id="symtoms_0" value="1">
+                          <label class="form-check-label" for="symtoms_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="symtoms" id="symtoms_1" value="0">
+                          <label class="form-check-label" for="symtoms_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Tiene una enfermedad pulmonar crónica?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="lungs" id="lungs_0" value="1">
+                          <label class="form-check-label" for="lungs_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="lungs" id="lungs_1" value="0">
+                          <label class="form-check-label" for="lungs_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Tiene diabetes?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="diabetes" id="diabetes_0" value="1">
+                          <label class="form-check-label" for="diabetes_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="diabetes" id="diabetes_1" value="0">
+                          <label class="form-check-label" for="diabetes_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Tiene una enfermedad cardíaca?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="hart" id="hart_0" value="1">
+                          <label class="form-check-label" for="hart_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="hart" id="hart_1" value="0">
+                          <label class="form-check-label" for="hart_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Tiene obesidad?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="obesity" id="obesity_0" value="1">
+                          <label class="form-check-label" for="obesity_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="obesity" id="obesity_1" value="0">
+                          <label class="form-check-label" for="obesity_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                    <tab-content>
+                      <h5>¿Está embarazada?</h5>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="pregnant" id="pregnant_0" value="1">
+                          <label class="form-check-label" for="pregnant_0">
+                            Sí
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-check row">
+                        <div class="col-4 col-md-2 m-auto text-left">
+                          <input class="form-check-input" type="radio" name="pregnant" id="pregnant_1" value="0">
+                          <label class="form-check-label" for="pregnant_1">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </tab-content>
+                </form-wizard>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="recomendations">
         <div class="container">
           <div class="row">
@@ -343,6 +609,7 @@ import mapInit from 'highcharts/modules/map'
 import darkUnica from 'highcharts/themes/dark-unica'
 import getData from '../services/service'
 import cubaMap from '../maps/cuba'
+import $ from 'jquery'
 
  
 stockInit(Highcharts)
@@ -686,7 +953,44 @@ export default {
       this.casesPerDayEstimationsChartOptions = buildChartEstimationsOptions(xData, yEstimatedData, yRealData);
       this.casePerSex = buildSexChartOptions(data.casePerSex.m, data.casePerSex.w);
       this.casePerAge = buildAgeChartOptions(data.casePerAge);
-    }
+    },
+    onSurveyComplete: function() {
+      let journey = $('input[name="journey"]:checked').val();
+      let confirmed = $('input[name="confirmed"]:checked').val();
+      let suspect = $('input[name="suspect"]:checked').val();
+      let age = $('input[name="age"]:checked').val();
+      let smoke = $('input[name="smoke"]:checked').val();
+      let symtoms = $('input[name="symtoms"]:checked').val();
+      let lungs = $('input[name="lungs"]:checked').val();
+      let diabetes = $('input[name="diabetes"]:checked').val();
+      let hart = $('input[name="hart"]:checked').val();
+      let obesity = $('input[name="obesity"]:checked').val();
+      let pregnant = $('input[name="pregnant"]:checked').val();
+
+      let title = 'Recomendación';
+      if (journey == 1 || confirmed == 1 || suspect == 1) {
+        this.$swal.fire(
+          title,
+          'Es recomendable que se haga la prueba del covid-19. Contacte con su centro de salud.',
+          'warning'
+        );
+      } else if (age >= 3 || smoke == 1 || symtoms == 1 || lungs == 1 || diabetes == 1 || hart == 1 || obesity == 1 || pregnant == 1) {
+        this.$swal.fire(
+          title,
+          'Usted está en el grupo de riesgo. Póngase en contacto con su centro de salud.',
+          'info'
+          );
+      } else {
+        this.$swal.fire(
+          title,
+          'No necesita hacerse la prueba del covid-19. Por favor quédese en casa.',
+          'success'
+          );
+      }
+
+      $('#survey_form').trigger("reset");
+      this.$refs.survey_form.reset();
+   }
   },
   computed: {
     deathRate: function() {
