@@ -88,44 +88,46 @@
       </section>
       
       <section id="statistics" class="bg-light">
-        <h2>Estadísticas</h2>
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
-            <div class="card">
-              <div class="card-body">
-                <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
-              </div>
-            </div>
-            <div id="from_cuba" class="text-center">
-              <font size="2"><b>Basado en:</b></font>
-              <div>
-                <a href="http://www.acn.cu" target="_blank"><font size="2">Agencia Cubana de Noticias</font></a>
-              </div>
-              <div>
-                <a href="http://www.cubadebate.cu/?s=covid+cuba+casos" target="_blank"><font size="2">Cubadebate</font></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-5 mr-lg-auto">
-            <div class="card">
-              <div class="card-body">
-                <highcharts :options="casesPerDayEstimationsChartOptions" class="chart"></highcharts>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-2">
-          <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+        <div class="container-fluid">
+          <h2>Estadísticas</h2>
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
               <div class="card">
-                <div class="card-body"> 
-                  <highcharts :options="casePerAge"></highcharts>
+                <div class="card-body">
+                  <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
                 </div>
               </div>
+              <div id="from_cuba" class="text-center">
+                <font size="2"><b>Basado en:</b></font>
+                <div>
+                  <a href="http://www.acn.cu" target="_blank"><font size="2">Agencia Cubana de Noticias</font></a>
+                </div>
+                <div>
+                  <a href="http://www.cubadebate.cu/?s=covid+cuba+casos" target="_blank"><font size="2">Cubadebate</font></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 mr-lg-auto">
+              <div class="card">
+                <div class="card-body">
+                  <highcharts :options="casesPerDayEstimationsChartOptions" class="chart"></highcharts>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-5 mr-lg-auto">
-            <div class="card">
-              <div class="card-body"> 
-                <highcharts :options="casePerSex"></highcharts>
+          <div class="row mt-2">
+            <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+                <div class="card">
+                  <div class="card-body"> 
+                    <highcharts :options="casePerAge"></highcharts>
+                  </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 mr-lg-auto">
+              <div class="card">
+                <div class="card-body"> 
+                  <highcharts :options="casePerSex"></highcharts>
+                </div>
               </div>
             </div>
           </div>
