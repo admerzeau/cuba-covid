@@ -43,7 +43,7 @@
             <div class="col-lg-12 mx-auto">
               <h2>Desglose de Casos</h2>
               <div class="row">
-                <div class="col-12 col-sm-3 mt-2">
+                <div class="col-12 col-sm-6 col-lg-3 mt-2">
                     <div class="card bg-warning">
                         <div class="card-header text-white">Total de casos</div>
                         <div class="card-body text-white">
@@ -53,7 +53,7 @@
                           </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-3 mt-2">
+                <div class="col-12 col-sm-6 col-lg-3 mt-2">
                     <div class="card bg-danger">
                       <div class="card-header text-white">Total de Muertes</div>
                         <div class="card-body text-white">
@@ -62,7 +62,7 @@
                           </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-3 mt-2">
+                <div class="col-12 col-sm-6 col-lg-3 mt-2">
                     <div class="card bg-info">
                       <div class="card-header text-white">Total de Sospechosos</div>
                         <div class="card-body text-white">
@@ -72,7 +72,7 @@
                           </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-3 mt-2">
+                <div class="col-12 col-sm-6 col-lg-3 mt-2">
                     <div class="card bg-success">
                         <div class="card-header text-white">Total de Recuperados</div>
                         <div class="card-body text-white">
@@ -88,45 +88,40 @@
       </section>
       
       <section id="statistics" class="bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">              
-              <h2>Estadísticas</h2>
-              <div class="card">
-                <div class="card-body">
-                  <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
-                </div>
+        <h2>Estadísticas</h2>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+            <div class="card">
+              <div class="card-body">
+                <highcharts class="chart" :options="casesPerDayChartOptions"></highcharts>
               </div>
-              <div id="from_cuba" align="left">
-                <font size="2"><b>Basado en:</b></font>
-                <div>
-                  <a href="http://www.acn.cu" target="_blank"><font size="2">Agencia Cubana de Noticias</font></a>
-                </div>
-                <div>
-                  <a href="http://www.cubadebate.cu/?s=covid+cuba+casos" target="_blank"><font size="2">Cubadebate</font></a>
-                </div>
+            </div>
+            <div id="from_cuba" class="text-center">
+              <font size="2"><b>Basado en:</b></font>
+              <div>
+                <a href="http://www.acn.cu" target="_blank"><font size="2">Agencia Cubana de Noticias</font></a>
+              </div>
+              <div>
+                <a href="http://www.cubadebate.cu/?s=covid+cuba+casos" target="_blank"><font size="2">Cubadebate</font></a>
               </div>
             </div>
           </div>
-          <br>
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <div class="card">
-                <div class="card-body">
-                  <highcharts :options="casesPerDayEstimationsChartOptions" class="chart"></highcharts>
-                </div>
+          <div class="col-12 col-md-6 col-lg-5 mr-lg-auto">
+            <div class="card">
+              <div class="card-body">
+                <highcharts :options="casesPerDayEstimationsChartOptions" class="chart"></highcharts>
               </div>
             </div>
           </div>
-          <br>
-          <div class="row">
-          <div class="col-lg-12 mx-auto">
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
             <div class="card">
               <div class="card-body">
                 <highcharts :constructor-type="'mapChart'" :options="casePerProvinceOptions" class="map"></highcharts>
               </div>
             </div>
-            <div id="from_worl" align="left">
+            <div id="from_worl" class="text-center">
                 <font size="2"><b>Basado en:</b></font>
                 <div>
                   <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank"><font size="2">Global Cases by CSSE at Johns Hopkins University (JHU)</font></a>
@@ -136,18 +131,15 @@
                 </div>
             </div>
           </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <div class="card">
-                <div class="card-body"> 
-                  <highcharts :options="casePerSex"></highcharts>
-                </div>
+          <div class="col-12 col-md-6 col-lg-5 mr-lg-auto">
+            <div class="card">
+              <div class="card-body"> 
+                <highcharts :options="casePerSex"></highcharts>
               </div>
             </div>
           </div>
-          <br>
+        </div>
+        <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto">
               <div class="card">
@@ -213,7 +205,7 @@
               </div>
             </div>
            </div>
-           <div id="from_worl" align="left">
+           <div id="from_worl" class="text-center">
               <font size="2"><b>Basado en:</b></font>
               <div>
                 <a href="https://www.dimecuba.com/revista/coronavirus-cuba/como-hacer-nasobuco/" target="_blank"><font size="2">Revista Dime Cuba</font></a>
