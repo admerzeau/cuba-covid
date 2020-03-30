@@ -1,9 +1,9 @@
 {
-    "totalCases" : 139,
-    "totalDeaths" : 3, 
-    "totalSuspicious" : 2317,
+    "totalCases" : 170,
+    "totalDeaths" : 4, 
+    "totalSuspicious" : 2681,
     "totalRecovered" : 4,
-    "lastReviewDate": "Marzo 29, 11:00 am",
+    "lastReviewDate": "Marzo 30, 11:00 am",
     "casePerProvince":[
       ["cu-ho", 3],
       ["cu-ar", 3],
