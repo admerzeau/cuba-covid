@@ -222,47 +222,7 @@
         </div>
       </section>
 
-      <section id="download" class="bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <h2>Zona de descargas</h2>
-              <div class="list-group">
-                <a href="./download/handbook.pdf" download="Manual de Prevención y Tratamiento de COVID-19" class="list-group-item list-group-item-action align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <p class="mb-1"><i class="fas fa-file-pdf"></i> Manual de Prevención y Tratamiento de COVID-19</p>
-                    <small>4.59 MB</small>
-                  </div>
-                  <p class="text-muted">Guía informativa sobre la experiencia clínica de cómo tratar este nuevo coronavirus. La guía de tratamientos ofrece consejos y referencias sobre la pandemia al personal médico de todo el mundo que está a punto de unirse a la guerra.</p>
-                </a>
-                <a href="./download/ibuprofeno.pdf" download="Ibuprofeno y COVID-19" class="list-group-item list-group-item-action align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <p class="mb-1"><i class="fas fa-file-pdf"></i> Ibuprofeno y COVID-19</p>
-                    <small>246 KB</small>
-                  </div>
-                  <p class="text-muted">Comunicado respecto de las informaciones surgidas sobre el peligro de usar ibuprofeno en infecciones por COVID-19</p>
-                </a>
-                <a href="./download/interferon.pdf" download="Interferón e Inmunidad a las Infecciones Virales" class="list-group-item list-group-item-action align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <p class="mb-1"><i class="fas fa-file-pdf"></i> Interferón e Inmunidad a las Infecciones Virales</p>
-                    <small>133 KB</small>
-                  </div>
-                  <p class="text-muted">Descripción, historia y mecanismo de acción del interferón.</p>
-                </a>
-                <a href="./download/interferones_problemas.pdf" download="Eventos-adversos-Interferones-Bogota" class="list-group-item list-group-item-action align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <p class="mb-1"><i class="fas fa-file-pdf"></i> Eventos adversos y Problemas relacionados con Interferones en Bogota</p>
-                    <small>2.36 MB</small>
-                  </div>
-                  <p class="text-muted">Eventos adversos y Problemas relacionados con medicamentos Interferones Reportados en Bogota D.C. 2008 – 2007. Trabajo de Grado.</p>
-                </a>                
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="survey">
+      <section id="survey" class="bg-light">
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-10 col-lg-8 mx-auto">
@@ -578,6 +538,69 @@
         </div>
       </section>
 
+      <section id="phase" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <h2>Etapas</h2>
+              <div class="card-deck">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <ul class="list-group">
+                        <li><b>1.</b> Preepidémica, o fase uno, en la que está el país en estos momentos: En esta se notifican casos confirmados de viajeros procedentes de países afectados, o casos locales estrechamente vinculados a los primeros, es decir, que se han producido porque han tenido vínculos o contactos con esos viajeros.</li>
+                        <li><b>2.</b> Transmisión autóctona limitada: Se confirman casos en los cuales no se han podido establecer nexos directos con viajeros procedentes de zonas afectadas. Casi siempre está limitada a conglomerados pequeños, una localidad del país,  una institución o centro en particular.</li>
+                        <li><b>3.</b> Epidémica: Es la más compleja. Se detectan y confirman casos sin nexos con viajeros, se incrementan los casos en diferentes localidades del territorio nacional y ocurren picos sostenidos en la curva de la pandemia.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <h2>Zona de descargas</h2>
+              <div class="list-group">
+                <a href="./download/handbook.pdf" download="Manual de Prevención y Tratamiento de COVID-19" class="list-group-item list-group-item-action align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1"><i class="fas fa-file-pdf"></i> Manual de Prevención y Tratamiento de COVID-19</p>
+                    <small>4.59 MB</small>
+                  </div>
+                  <p class="text-muted">Guía informativa sobre la experiencia clínica de cómo tratar este nuevo coronavirus. La guía de tratamientos ofrece consejos y referencias sobre la pandemia al personal médico de todo el mundo que está a punto de unirse a la guerra.</p>
+                </a>
+                <a href="./download/ibuprofeno.pdf" download="Ibuprofeno y COVID-19" class="list-group-item list-group-item-action align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1"><i class="fas fa-file-pdf"></i> Ibuprofeno y COVID-19</p>
+                    <small>246 KB</small>
+                  </div>
+                  <p class="text-muted">Comunicado respecto de las informaciones surgidas sobre el peligro de usar ibuprofeno en infecciones por COVID-19</p>
+                </a>
+                <a href="./download/interferon.pdf" download="Interferón e Inmunidad a las Infecciones Virales" class="list-group-item list-group-item-action align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1"><i class="fas fa-file-pdf"></i> Interferón e Inmunidad a las Infecciones Virales</p>
+                    <small>133 KB</small>
+                  </div>
+                  <p class="text-muted">Descripción, historia y mecanismo de acción del interferón.</p>
+                </a>
+                <a href="./download/interferones_problemas.pdf" download="Eventos-adversos-Interferones-Bogota" class="list-group-item list-group-item-action align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1"><i class="fas fa-file-pdf"></i> Eventos adversos y Problemas relacionados con Interferones en Bogota</p>
+                    <small>2.36 MB</small>
+                  </div>
+                  <p class="text-muted">Eventos adversos y Problemas relacionados con medicamentos Interferones Reportados en Bogota D.C. 2008 – 2007. Trabajo de Grado.</p>
+                </a>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="about" class="bg-light">
         <div class="container">
           <div class="row">
@@ -773,7 +796,6 @@ const buildAgeChartOptions = (data_age) => ({
             }
         }
     },
-    
     credits: {
         enabled: false
     },
@@ -781,7 +803,16 @@ const buildAgeChartOptions = (data_age) => ({
         name: 'Diagnosticados',
         data: data_age,
         color: '#ffff00'
-    }]
+    }],
+    colorAxis: [{
+        minColor: '#fcff2f',
+        maxColor: '#1c584d',
+        labels: {
+            formatter: function () {
+                return Math.abs(this.value) + '%';
+            }
+        }
+    }],
 });
 
 const buildChartOptions = (xData, yEstimatedData, yRealData) => ({
