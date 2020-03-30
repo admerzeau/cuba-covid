@@ -6,32 +6,32 @@
     "lastReviewDate": "Marzo 30, 11:00 am",
     "casePerProvince":[
       ["cu-ho", 3],
-      ["cu-ar", 3],
-      ["cu-ma", 13],
+      ["cu-ar", 6],
+      ["cu-ma", 18],
       ["cu-ij", 0],
-      ["cu-ca", 11],
+      ["cu-ca", 15],
       ["cu-cm", 8],
-      ["cu-cf", 5],
-      ["cu-gu", 0],
-      ["cu-gr", 6],
+      ["cu-cf", 8],
+      ["cu-gu", 1],
+      ["cu-gr", 7],
       ["cu-mq", 0],
-      ["cu-pr", 10],
-      ["cu-ch", 32],
-      ["cu-vc", 24],
+      ["cu-pr", 13],
+      ["cu-ch", 42],
+      ["cu-vc", 25],
       ["cu-ss", 13],
-      ["cu-sc", 7],
-      ["cu-lt", 1],
-      ["unknow", 3]
+      ["cu-sc", 8],
+      ["cu-lt", 2],
+      ["unknow", 1]
     ],
     "casePerSex":{
-      "m": 69,
-      "w":70
+      "m": 92,
+      "w":78
     },
     "casePerAge":[
-      ["0-18", 12],
-      ["19-40", 44],
-      ["41-60", 57],
-      ["61-max", 26],
+      ["0-18", 16],
+      ["19-40", 52],
+      ["41-60", 70],
+      ["61-max", 32],
       ["unknown", 0]
     ]
 }
