@@ -33,14 +33,8 @@
           </div>
         </div>
       </nav>
-      <section id="page-top">
-        <div class="container">
-          <h3> Cuba vs Covid19 </h3>
-          <br>
-          <p>Las siguientes gráficas muestran la información actualizada de <b>{{ lastReviewDate }}</b>. La estimación de casos se basa en un simple método estadístico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la información si le parece útil.</p>
-        </div>
-      </section>
       <section id="cases">
+		<div class="" id="overlay"> </div>
         <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto">
@@ -48,7 +42,7 @@
               <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3 mt-2">
                     <div class="card bg-warning">
-                        <div class="card-header text-white">Total de casos</div>
+                        <div class="card-header text-white">CONFIRMADOS</div>
                         <div class="card-body text-white">
                             <h3 class="card-title"><i class="fas fa-check"></i>  
                               <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalCases" :duration="duration" :delay="delay" :easing="easing"/>
@@ -58,7 +52,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-2">
                     <div class="card bg-danger">
-                      <div class="card-header text-white">Total de Muertes</div>
+                      <div class="card-header text-white">FALLECIDOS</div>
                         <div class="card-body text-white">
                             <h3 class="card-title"><i class="fas fa-frown"></i> {{totalDeaths}}
                             </h3>
@@ -67,7 +61,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-2">
                     <div class="card bg-info">
-                      <div class="card-header text-white">Total de Sospechosos</div>
+                      <div class="card-header text-white">SOSPECHOSOS</div>
                         <div class="card-body text-white">
                             <h3 class="card-title"><i class="fas fa-user-md"></i> 
                               <number class="ml-1" ref="totalCases" :from="numberFrom" :to="totalSuspicious" :duration="duration" :delay="delay" :easing="easing"/>
@@ -77,19 +71,28 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-2">
                     <div class="card bg-success">
-                        <div class="card-header text-white">Total de Recuperados</div>
+                        <div class="card-header text-white">RECUPERADOS</div>
                         <div class="card-body text-white">
                             <h3 class="card-title"><i class="fas fa-child"></i> {{totalRecovered}}
                             </h3>
                           </div>
                     </div>
                 </div>
+				<div data-v-f2dd9d32="" class="col-12 mt-2 mt-5 text-left text-uppercase text-white txt-nota">
+					<div data-v-f2dd9d32="" class="">* Total de casos acumulados hasta este momento.</div>
+				</div>
             </div>
             </div>
           </div>
         </div>
       </section>
-      
+      <section id="page-top">
+        <div class="container">
+          <h3> Cuba vs Covid19 </h3>
+          <br>
+          <p>Las siguientes gráficas muestran la información actualizada de <b>{{ lastReviewDate }}</b>. La estimación de casos se basa en un simple método estadístico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la información si le parece útil.</p>
+        </div>
+      </section>
       <section id="statistics" class="bg-light">
         <div class="container-fluid">
           <h2>Estadísticas</h2>
