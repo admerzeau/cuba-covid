@@ -35,9 +35,19 @@
       </nav>
       <section id="page-top">
         <div class="container">
-          <h3> Cuba vs Covid19 </h3>
+          <h3> {{ title }} </h3>
           <br>
           <p>Las siguientes gráficas muestran la información actualizada de <b>{{ lastReviewDate }}</b>. La estimación de casos se basa en un simple método estadístico y tiene como objetivo hacer entender la peligrosidad de este virus si no es controlado a tiempo. Tome todas las medidas necesarias y comparta la información si le parece útil.</p>
+          <div class="row text-center">
+            <div class="col-12">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.cubacovid19.com/" target="_blank" class="mx-1">
+                <img src="/img/facebook.png" alt="Facebook" width="32px" height="32px" data-toggle="tooltip" data-placement="bottom" title="Compartir en Facebook"/>
+              </a>
+              <a :href="'https://twitter.com/intent/tweet?url=http://www.cubacovid19.com/&text=' + title" target="_blank" class="mx-1">
+                <img src="/img/twitter.png" alt="Twitter" width="32px" height="32px" data-toggle="tooltip" data-placement="bottom" title="Compartir en Twitter"/>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
       <section id="cases">
