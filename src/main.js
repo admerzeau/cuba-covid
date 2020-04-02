@@ -6,6 +6,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
 
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 import 'sweetalert2/dist/sweetalert2.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 Vue.use(VueNumber)
 Vue.use(VueFormWizard)

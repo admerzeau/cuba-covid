@@ -14,12 +14,14 @@
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- FontAwesome CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet" />
-
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
 
+    <meta property="og:title" content="Cuba vs Covid19">
+    <meta property="og:description" content="Reportes estadísticos del virus en Cuba">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="http://www.cubacovid19.com/">
+    <meta property="og:type" content="website">
   </head>
   <body>
     <noscript>
@@ -38,6 +40,10 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161597540-1"></script>
     <script>
+      $(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+      })
+
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
