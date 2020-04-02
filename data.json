@@ -1,37 +1,39 @@
 {
-    "totalCases" : 170,
-    "totalDeaths" : 4, 
-    "totalSuspicious" : 2681,
-    "totalRecovered" : 4,
-    "lastReviewDate": "Marzo 30, 11:00 am",
+    "totalCases" : 212,
+    "totalDeaths" : 6, 
+    "totalSuspicious" : 2742,
+    "totalRecovered" : 12,
+    "lastReviewDate": "Abril 1, 11:00 am",
     "casePerProvince":[
-      ["cu-ho", 3],
+      ["cu-ho", 5],
       ["cu-ar", 6],
       ["cu-ma", 18],
       ["cu-ij", 0],
       ["cu-ca", 15],
-      ["cu-cm", 8],
+      ["cu-cm", 13],
       ["cu-cf", 8],
       ["cu-gu", 1],
-      ["cu-gr", 7],
+      ["cu-gr", 9],
       ["cu-mq", 0],
-      ["cu-pr", 13],
-      ["cu-ch", 42],
-      ["cu-vc", 25],
-      ["cu-ss", 13],
-      ["cu-sc", 8],
-      ["cu-lt", 2],
+      ["cu-pr", 14],
+      ["cu-ch", 60],
+      ["cu-vc", 28],
+      ["cu-ss", 15],
+      ["cu-sc", 16],
+      ["cu-lt", 3],
       ["unknow", 1]
     ],
     "casePerSex":{
-      "m": 92,
-      "w":78
+      "m": 115,
+      "w":97
     },
     "casePerAge":[
-      ["0-18", 16],
-      ["19-40", 52],
-      ["41-60", 70],
-      ["61-max", 32],
-      ["unknown", 0]
+      ["0-18", 26],
+      ["19-40", 69],
+      ["41-60", 80],
+      ["61-max", 45],
+      ["unknown", 1]
     ]
 }
+
+
