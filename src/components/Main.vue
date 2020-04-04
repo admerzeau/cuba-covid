@@ -18,13 +18,16 @@
                 <a class="nav-link js-scroll-trigger" href="#mask_build">Nasobuco</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#download">Descargas</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#survey">Encuesta</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#recomendations">Recomendaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#phases">Etapas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#download">Descargas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#about">Acerca de</a>
@@ -548,25 +551,49 @@
         </div>
       </section>
 
-      <section id="phase" class="bg-light">
+      <section id="phases" class="bg-light">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <h2>Etapas</h2>
-              <div class="card-deck">
-                <div class="card">
-                  <div class="card-body">
-                    <p class="card-text">
-                      <ul class="list-group">
-                        <li><b>1.</b> Preepidémica, o fase uno, en la que está el país en estos momentos: En esta se notifican casos confirmados de viajeros procedentes de países afectados, o casos locales estrechamente vinculados a los primeros, es decir, que se han producido porque han tenido vínculos o contactos con esos viajeros.</li>
-                        <li><b>2.</b> Transmisión autóctona limitada: Se confirman casos en los cuales no se han podido establecer nexos directos con viajeros procedentes de zonas afectadas. Casi siempre está limitada a conglomerados pequeños, una localidad del país,  una institución o centro en particular.</li>
-                        <li><b>3.</b> Epidémica: Es la más compleja. Se detectan y confirman casos sin nexos con viajeros, se incrementan los casos en diferentes localidades del territorio nacional y ocurren picos sostenidos en la curva de la pandemia.</li>
-                      </ul>
-                    </p>
+          <h2>Etapas</h2>
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-4 mt-2">
+                  <div class="card bg-info text-white h-100">
+                    <div class="card-header">
+                      <h5><strong>Fase 1</strong> <i class="fas fa-check-circle" data-toggle="tooltip" data-placement="top" title="Fase actual"></i></h5>
+                      <span>Preepidémica</span>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        En esta se notifican casos confirmados de viajeros procedentes de países afectados, o casos locales estrechamente vinculados a los primeros, es decir, que se han producido porque han tenido vínculos o contactos con esos viajeros.
+                      </p>
+                    </div>
                   </div>
-                </div>
               </div>
-            </div>
+              <div class="col-12 col-md-6 col-lg-4 mt-2">
+                  <div class="card bg-warning text-white h-100">
+                    <div class="card-header">
+                      <h5><strong>Fase 2</strong></h5>
+                      <span>Transmisión autóctona limitada</span>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        Se confirman casos en los cuales no se han podido establecer nexos directos con viajeros procedentes de zonas afectadas. Casi siempre está limitada a conglomerados pequeños, una localidad del país,  una institución o centro en particular.
+                      </p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 mt-2 mx-auto">
+                  <div class="card bg-danger text-white h-100">
+                    <div class="card-header">
+                      <h5><strong>Fase 3</strong></h5>
+                      <span>Epidémica</span>
+                      </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        Es la más compleja. Se detectan y confirman casos sin nexos con viajeros, se incrementan los casos en diferentes localidades del territorio nacional y ocurren picos sostenidos en la curva de la pandemia.
+                      </p>
+                    </div>
+                  </div>
+              </div>
           </div>
         </div>
       </section>
