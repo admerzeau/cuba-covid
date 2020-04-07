@@ -5,21 +5,21 @@
     "totalRecovered" : 27,
     "lastReviewDate": "Abril 7, 11:00 am",
     "casePerProvince":[
-      ["cu-ho", 12],
-      ["cu-ar", 15],
-      ["cu-ma", 36],
-      ["cu-ij", 2],
-      ["cu-ca", 28],
-      ["cu-cm", 17],
+      ["cu-ho", 14],
+      ["cu-ar", 16],
+      ["cu-ma", 37],
+      ["cu-ij", 6],
+      ["cu-ca", 48],
+      ["cu-cm", 20],
       ["cu-cf", 11],
       ["cu-gu", 1],
       ["cu-gr", 9],
-      ["cu-mq", 3],
-      ["cu-pr", 23],
-      ["cu-ch", 109],
-      ["cu-vc", 38],
+      ["cu-mq", 4],
+      ["cu-pr", 24],
+      ["cu-ch", 115],
+      ["cu-vc", 42],
       ["cu-ss", 18],
-      ["cu-sc", 24],
+      ["cu-sc", 27],
       ["cu-lt", 3],
       ["unknow", 1]
     ],
@@ -35,4 +35,3 @@
       ["unknown", 2]
     ]
 }
-
