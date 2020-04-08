@@ -558,7 +558,7 @@
               <div class="col-12 col-md-6 col-lg-4 mt-2">
                   <div class="card bg-info text-white h-100">
                     <div class="card-header">
-                      <h5><strong>Fase 1</strong> <i class="fas fa-check-circle" data-toggle="tooltip" data-placement="top" title="Fase actual"></i></h5>
+                      <h5><strong>Fase 1</strong></h5>
                       <span>Preepidémica</span>
                     </div>
                     <div class="card-body">
@@ -571,7 +571,7 @@
               <div class="col-12 col-md-6 col-lg-4 mt-2">
                   <div class="card bg-warning text-white h-100">
                     <div class="card-header">
-                      <h5><strong>Fase 2</strong></h5>
+                      <h5><strong>Fase 2</strong> <i class="fas fa-check-circle" data-toggle="tooltip" data-placement="top" title="Fase actual"></i></h5>
                       <span>Transmisión autóctona limitada</span>
                     </div>
                     <div class="card-body">
