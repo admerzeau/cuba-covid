@@ -1,24 +1,24 @@
 {
     "totalCases" : 515,
-    "totalDeaths" : 12,
-    "totalSuspicious" : 1752,
-    "totalRecovered" : 27,
+    "totalDeaths" : 15,
+    "totalSuspicious" : 1860,
+    "totalRecovered" : 28,
     "lastReviewDate": "Abril 9, 11:00 am",
     "casePerProvince":[
-      ["cu-ho", 26],
-      ["cu-ar", 22],
-      ["cu-ma", 40],
-      ["cu-ij", 6],
-      ["cu-ca", 48],
+      ["cu-ho", 33],
+      ["cu-ar", 25],
+      ["cu-ma", 44],
+      ["cu-ij", 8],
+      ["cu-ca", 54],
       ["cu-cm", 22],
       ["cu-cf", 11],
       ["cu-gu", 1],
       ["cu-gr", 9],
       ["cu-mq", 4],
       ["cu-pr", 24],
-      ["cu-ch", 137],
-      ["cu-vc", 51],
-      ["cu-ss", 28],
+      ["cu-ch", 169],
+      ["cu-vc", 54],
+      ["cu-ss", 29],
       ["cu-sc", 30],
       ["cu-lt", 3],
       ["unknow", 1]
@@ -35,3 +35,5 @@
       ["unknown", 1]
     ]
 }
+
+
