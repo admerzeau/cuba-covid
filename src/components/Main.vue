@@ -699,7 +699,10 @@ Highcharts.setOptions({
             decimalPoint: '.'
         }
 });
-const createEvaluationFunc = (a,b) => (x) => Math.ceil(a * Math.pow(Math.E, b * x))
+
+// const expEvalFunc = (a, b) => (x) => Math.ceil(a * Math.pow(Math.E, b * x))
+const polEvalFunc = (a, b, c, d) => (x) => Math.ceil(a * Math.pow(x, 3) + b * Math.pow(x, 2) + c * x + d)
+
 const buildMapChartOptions = (casesPerProvince) => ({
 
                 chart: {
@@ -1002,7 +1005,7 @@ export default {
 
       const historic = await getData()
       
-      const func = createEvaluationFunc(historic.latest.data.a,historic.latest.data.b)
+      const func = polEvalFunc(historic.latest.data.a, historic.latest.data.b, historic.latest.data.c, historic.latest.data.d)
 
       const yRealData = historic.history.map(e => e.total)
       const yEstimatedData = []
