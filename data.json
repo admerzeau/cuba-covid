@@ -5,33 +5,33 @@
     "totalRecovered" : 151,
     "lastReviewDate": "Abril 14, 11:00 am",
     "casePerProvince":[
-      ["cu-ho", 58],
+      ["cu-ho", 59],
       ["cu-ar", 26],
       ["cu-ma", 52],
       ["cu-ij", 17],
-      ["cu-ca", 66],
+      ["cu-ca", 68],
       ["cu-cm", 30],
       ["cu-cf", 11],
-      ["cu-gu", 6],
+      ["cu-gu", 8],
       ["cu-gr", 9],
-      ["cu-mq", 8],
+      ["cu-mq", 10],
       ["cu-pr", 25],
-      ["cu-ch", 235],
-      ["cu-vc", 92],
-      ["cu-ss", 49],
+      ["cu-ch", 264],
+      ["cu-vc", 93],
+      ["cu-ss", 52],
       ["cu-sc", 35],
       ["cu-lt", 7],
       ["unknow", 0]
     ],
     "casePerSex":{
-      "m":206,
-      "w":191 
+      "m":380,
+      "w":386 
     },
     "casePerAge":[
-      ["0-18", 102],
-      ["19-40", 222],
-      ["41-60", 252],
-      ["61-max", 149],
+      ["0-18", 104],
+      ["19-40", 235],
+      ["41-60", 267],
+      ["61-max", 159],
       ["unknown", 1]
     ]
 }
