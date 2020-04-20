@@ -1,9 +1,9 @@
 {
-    "totalCases" : 1035,
-    "totalDeaths" : 34,
-    "totalSuspicious" : 3037,
-    "totalRecovered" : 255,
-    "lastReviewDate": "Abril 19, 11:00 am",
+    "totalCases" : 1087,
+    "totalDeaths" : 36,
+    "totalSuspicious" : 3232,
+    "totalRecovered" : 285,
+    "lastReviewDate": "Abril 20, 11:00 am",
     "casePerProvince":[
       ["cu-ho", 73],
       ["cu-ar", 27],
